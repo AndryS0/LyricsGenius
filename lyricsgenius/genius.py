@@ -142,6 +142,7 @@ class Genius(API, PublicAPI):
                       "Song URL: https://genius.com/{}".format(path))
             return None
         else:
+
             rem = div.find("div", class_=re.compile("Lyrics__Footer"))
             if rem:
                 print('Footer found')
@@ -150,7 +151,7 @@ class Genius(API, PublicAPI):
             header = div.find("h2", class_=re.compile("TextLabel"))
             if header:
                 print('TextLabel found')
-                header.replace_with("")
+                header.replace_with("\n")
 
             contributors = div.find("span", class_=re.compile("Contributors"))
             if contributors:
