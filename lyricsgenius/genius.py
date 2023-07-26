@@ -151,8 +151,13 @@ class Genius(API, PublicAPI):
             header = div.find("h2", class_=re.compile("TextLabel"))
             if header:
                 print('TextLabel found')
-                header.replace_with("\n")
-
+                header.replace_with("")
+            
+            dropdown = div.find("div", class_=re.compile("Dropdown"))
+            if dropdown:
+                print('Dropdown found')
+                dropdown.replace_with("")
+            
             contributors = div.find("span", class_=re.compile("Contributors"))
             if contributors:
                 print('Contributors found')
